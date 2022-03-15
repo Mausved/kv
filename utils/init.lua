@@ -22,7 +22,7 @@ function utils.isNullType(obj)
 end
 
 function utils.writeBody(self, code, body)
-    local resp = self:render({ text = json.encode({key=body[1], value=body[2]}) })
+    local resp = self:render({ text = json.encode({ key = body[1], value = body[2] }) })
     resp.status = code
     return resp
 end

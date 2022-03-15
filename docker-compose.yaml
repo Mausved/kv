@@ -18,7 +18,6 @@ services:
     working_dir: /opt/tarantool/
     command: "tarantool init.lua"
     volumes:
-#      - ./:/opt/tarantool/
       - ./init.lua:/opt/tarantool/init.lua
       - ./utils/:/opt/tarantool/utils/
       - ./controllers/:/opt/tarantool/controllers
