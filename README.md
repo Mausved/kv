@@ -4,6 +4,10 @@ It's simple NoSQL kv-storage based on tarantool
 ### usability
 `docker-compose up -dV`
 
+### net using
+`http://89.208.198.186/kv/1`
+`http://some-kv-storage.ru/kv/1`
+
 ### api (postman)
 https://www.postman.com/universal-desert-400924/workspace/tarantool/overview
 
