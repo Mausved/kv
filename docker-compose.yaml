@@ -1,0 +1,24 @@
+version: "3.5"
+services:
+
+  web:
+    image: nginx
+    ports:
+      - 80:80
+    depends_on:
+      - kv
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx_logs:/var/log/nginx
+
+  kv:
+    image: tarantool/tarantool:latest
+    expose:
+      - "8000"
+    working_dir: /opt/tarantool/
+    command: "tarantool init.lua"
+    volumes:
+#      - ./:/opt/tarantool/
+      - ./init.lua:/opt/tarantool/init.lua
+      - ./utils/:/opt/tarantool/utils/
+      - ./controllers/:/opt/tarantool/controllers
